@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/taher_codePractice
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+management:
+ endpoints:
+  web:
+    exposure:
+      include: health,info,metrics,env
+    base-path: /actuator
+ endpoint:
+    health:
+      show-details: always
